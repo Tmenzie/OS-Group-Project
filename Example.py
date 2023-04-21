@@ -22,7 +22,8 @@ def handle_connection(conn, addr, player_name):
         if not data:
             print(f'{player_name} disconnected')
             break
-        choice = data.decode()
+       # choice = data.decode()
+        choice = input('\nPlease enter rock, paper or scissors:\n')
         print(f'{player_name} chose {choice}')
         # Choose a random option for the computer
         options = ['rock', 'paper', 'scissors']
@@ -45,7 +46,7 @@ def handle_connection(conn, addr, player_name):
 def start_game():
     # Create the server socket
     host = '127.0.0.1'
-    port = 8000
+    port = 5540
     server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_sock.bind((host, port))
     server_sock.listen(2)
