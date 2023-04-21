@@ -1,6 +1,7 @@
 import socket
 import threading
 import random
+import tkinter 
 
 # Define the game rules
 rules = {
