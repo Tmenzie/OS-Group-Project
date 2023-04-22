@@ -1,13 +1,16 @@
 from tkinter import *
+from PIL import Image, ImageTk
 
 #Creating the main window
 mainPanel = Tk()
 mainPanel.title("Rock Paper Scissors")
-mainPanel.geometry("275x125")
+mainPanel.geometry("500x400")
 var = IntVar()
 
+#Loading the images
+
 #setting the choice
-def sel():
+def select():
     if var.get() == 1:
         choice = "rock"
     elif var.get() == 2:
@@ -21,6 +24,7 @@ def sel():
 
 #Send choice to server
 def buttonPush():
+    
     #send choice to server
     top= Toplevel(mainPanel)
     top.geometry("275x125")
@@ -28,25 +32,31 @@ def buttonPush():
 
     playerResults = 1
 
-    if (playerResults == 1):
+    if (playerResults == "Winner"):
         result = "You won!"
     else:
         result = "You lost!"
     Label(top, text= result).pack()
 
 
-
 #Rock button
-R1 = Radiobutton(mainPanel, text="Rock", variable=var, value=1, command=sel)
-R1.pack( anchor = W )
+rock_pic = PhotoImage("/Rock.png")
+R1 = Radiobutton(mainPanel, image=rock_pic, variable=var, value=1, command=select)
+R1.image = rock_pic
+R1.pack()
 
 #Paper button
-R2 = Radiobutton(mainPanel, text="Paper", variable=var, value=2, command=sel)
-R2.pack( anchor = W )
+paper_pic = PhotoImage("/Scissors.png")
+R2 = Radiobutton(mainPanel, image=paper_pic, variable=var, value=2, command=select)
+R2.image = paper_pic
+R2.pack()
+
 
 #Scissors button
-R3 = Radiobutton(mainPanel, text="Scissors", variable=var, value=3, command=sel)
-R3.pack( anchor = W)
+scissor_pic = PhotoImage("/Scissors.png")
+R3 = Radiobutton(mainPanel, image=scissor_pic, variable=var, value=3, command=select)
+R3.image = scissor_pic
+R3.pack()
 
 #Submit button
 B = Button(text ="Submit", command = buttonPush)
