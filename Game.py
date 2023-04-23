@@ -40,20 +40,20 @@ def buttonPush():
 
 
 #Rock button
-rock_pic = PhotoImage("/Rock.png")
+rock_pic = PhotoImage("/pictures/Rock.png")
 R1 = Radiobutton(mainPanel, image=rock_pic, variable=var, value=1, command=select)
 R1.image = rock_pic
 R1.pack()
 
 #Paper button
-paper_pic = PhotoImage("/Scissors.png")
+paper_pic = PhotoImage("/pictures/Scissors.png")
 R2 = Radiobutton(mainPanel, image=paper_pic, variable=var, value=2, command=select)
 R2.image = paper_pic
 R2.pack()
 
 
 #Scissors button
-scissor_pic = PhotoImage("/Scissors.png")
+scissor_pic = PhotoImage("/pictures/Scissors.png")
 R3 = Radiobutton(mainPanel, image=scissor_pic, variable=var, value=3, command=select)
 R3.image = scissor_pic
 R3.pack()
